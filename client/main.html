@@ -1,0 +1,77 @@
+<head>
+  <title>luislainez_auremchallenge</title>
+</head>
+
+<body>
+  {{> top}} {{> posts}}
+
+</body>
+
+<template name="top">
+  <div class="topDev">
+    <div id="tit">
+      <h1 style="color:white">Reddit</h1>
+    </div>
+    <div id="srcBar">
+      <input type="text" class="src" name="text" value-bind="exampleVariable1" id="category" value="funny">
+    </div>
+  </div>
+</template>
+
+<template name="posts">
+  {{#each posts}} 
+    {{> post}}
+  {{/each}}
+</template>
+<template name="post">
+  <div class="post" data-toggle="modal" data-target="#exampleModal">
+    <div class="leftPost">
+      <img src="{{thumbnail}}" alt="" class="image">
+    </div>
+    <div class="rightPost">
+      <div>
+        <h3 style="color:RGB(147,206,222,1);">{{author}}</h3>
+        <p style="font-family:courier;">{{title}} </p>
+        
+      </div>
+      <div class="reaction">
+        <div class="imgComment">
+            <img src="/images/icon-comment.png">
+        </div>
+        <div class="comments">
+          <p style="font-family:verdana;">  {{num_comments}} comments </p>
+        </div>
+        <div>
+            <img src="/images/icon-ups.png">
+        </div>
+        <div>
+          <p style="font-family:verdana;"> {{ups}} ups </p>
+        </div>
+        <div>
+            <img src="/images/icon-downs.png"> 
+        </div>
+        <div>
+          <p style="font-family:verdana;"> {{downs}} downs </p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{title}} </h5>
+          </div>
+          <div class="modal-body">
+            <img src="{{thumbnail}}" alt="" >
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Salir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

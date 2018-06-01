@@ -1,0 +1,14 @@
+{
+  "name": "luislainez_auremchallenge",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.42",
+    "bcrypt": "^2.0.1",
+    "bootstrap": "^3.3.7",
+    "meteor-node-stubs": "^0.3.2",
+    "simpl-schema": "^1.5.0"
+  }
+}
